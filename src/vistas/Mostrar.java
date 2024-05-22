@@ -1,16 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package vistas;
 
 import GetSet.Variables;
+import java.awt.Color;
+import javax.swing.border.EmptyBorder;
 import sql.CRUDsql;
 
-/**
- *
- * @author gen22
- */
 public class Mostrar extends javax.swing.JFrame {
 
     /**
@@ -19,6 +13,9 @@ public class Mostrar extends javax.swing.JFrame {
     public Mostrar() {
         initComponents();
         txtIdEmpleado.setEditable(false);
+        btnActualizar.setBackground(Color.decode("#808080"));
+        btnActualizar.setForeground(Color.decode("#000000"));
+        btnActualizar.setBorder( new EmptyBorder(5, 12, 5, 12));
     }
 
     /**
@@ -72,6 +69,11 @@ public class Mostrar extends javax.swing.JFrame {
         });
 
         btnActualizar.setText("Actualizar");
+        btnActualizar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnActualizarMouseClicked(evt);
+            }
+        });
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarActionPerformed(evt);
@@ -215,6 +217,10 @@ public class Mostrar extends javax.swing.JFrame {
         txtApellido.setText("");
         txtPuesto.setText("");
     }//GEN-LAST:event_btnEliminarActionPerformed
+
+    private void btnActualizarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnActualizarMouseClicked
+        btnActualizar.setBackground(Color.decode("#616363"));
+    }//GEN-LAST:event_btnActualizarMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
